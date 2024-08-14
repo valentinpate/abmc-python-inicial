@@ -1,4 +1,4 @@
-import sqlite3
+# import sqlite3
 import re
 from datetime import datetime
 from tkinter import messagebox as msg
@@ -23,12 +23,12 @@ class Abmc():
         print("funcion_crear llamada")
         validador = Validacion(anio.get())
         if not validador.validar_year():
-            msg.showinfo("Error", "Año inválido. Por favor ingrese un año calendario pasado.")
+            msg.showinfo("Error", "Año inválido. Por favor ingrese un año \
+                         calendario pasado.")
             return
 
-        if titulo.get() == "" or autor.get() == "" or anio.get() == "" or isbn.get(
-
-        ) == "":
+        if (titulo.get() == "" or autor.get() == ""
+                or anio.get() == "" or isbn.get() == ""):
             msg.showinfo("Error", "Por favor complete todos los campos")
             return
         lista = Biblioteca()
@@ -56,22 +56,25 @@ class Abmc():
             print(registro)
         self.actualizar_treeview(tree)
 
-    def funcion_modificar(self, titulo, autor, anio, isbn, tree):
+    def modificar(self, titulo, autor, anio, isbn, tree):
         print("funcion_modificar llamada")
         seleccion = tree.focus()
         if not seleccion:
-            msg.showinfo("Error", "Por favor seleccione un registro para modificar")
+            msg.showinfo("Error", "Por favor seleccione un registro \
+                         para modificar")
             return
         print(tree.item(seleccion))
         fila = tree.item(seleccion)
         validador = Validacion(anio.get())
 
-        if titulo.get() == "" or autor.get() == "" or anio.get() == "" or isbn.get() == "":
+        if (titulo.get() == "" or autor.get() == ""
+                or anio.get() == "" or isbn.get() == ""):
             msg.showinfo("Error", "Por favor complete todos los campos")
             return
 
         if not validador.validar_year():
-            msg.showinfo("Error", "Año inválido. Por favor ingrese un año calendario pasado.")
+            msg.showinfo("Error", "Año inválido. Por favor ingrese un \
+                         año calendario pasado.")
             return
 
         try:
@@ -80,7 +83,11 @@ class Abmc():
             msg.showinfo("Error", "El año debe ser un número entero.")
             return
 
-        actualizado = Biblioteca.update(titulo=titulo.get(), autor=autor.get(), anio=anio.get(), isbn=isbn.get()).where(Biblioteca.id==fila['text'])
+        actualizado = Biblioteca.update(titulo=titulo.get(),
+                                        autor=autor.get(),
+                                        anio=anio.get(),
+                                        isbn=isbn.get()).where(Biblioteca.id
+                                                               == fila['text'])
         actualizado.execute()
         print(titulo, autor, nuevo_anio, isbn)
         print("Item registrado")
@@ -98,14 +105,18 @@ class Abmc():
 
     def consulta(self, a, b, c, d):
         select_data = [a.lower(), b.lower(), c, d]
-        # consultado = Biblioteca.select() Necesito hacer que los valores se puedan leer como lista?
+        # consultado = Biblioteca.select() Necesito hacer que los valores
+        # se puedan leer como lista?
         resultados = ""
         for dato in Biblioteca.select():
             # print("Consulta", dato.__dict__)
             try:
-                datos = f"ID:{dato.id} - {dato.titulo}, {dato.autor} ({dato.anio}) | ISBN: {dato.isbn} \n ~~~~~~~~~~~~~~~~~~~~~ \n"
-                if (dato.titulo.lower() == select_data[0] or dato.autor.lower() == select_data[1] 
-                        or str(dato.anio) == select_data[2] or dato.isbn == select_data[3]):
+                datos = f"ID:{dato.id} - {dato.titulo}, {dato.autor} \
+                ({dato.anio}) | ISBN: {dato.isbn} \n ~~~~~~~~~~~~~~~~~~~~~ \n"
+                if (dato.titulo.lower() == select_data[0]
+                    or dato.autor.lower() == select_data[1]
+                    or str(dato.anio) == select_data[2]
+                        or dato.isbn == select_data[3]):
                     resultados += datos
             except Exception as e:
                 msg.showerror("ERROR", e)

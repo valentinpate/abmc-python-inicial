@@ -11,10 +11,10 @@ class BaseModel(Model):
 
 
 class Biblioteca(BaseModel):
-    titulo = CharField(unique=True)
+    titulo = CharField(unique = True)
     autor = CharField()
-    isbn= IntegerField(unique=True)
-    anio= IntegerField()
+    isbn = IntegerField(unique = True)
+    anio = IntegerField()
 
 
 mibase.connect()
