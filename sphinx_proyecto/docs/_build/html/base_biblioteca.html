@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modulo Base Bibioleta &mdash; Biblioteca 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modulo Funciones" href="funciones.html" />
+    <link rel="prev" title="Modulo Vista" href="vista.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Biblioteca
+          </a>
+              <div class="version">
+                0.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main.html">Modulo Main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vista.html">Modulo Vista</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modulo Base Bibioleta</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-biblioteca-py">base_biblioteca.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base_biblioteca.BaseModel"><code class="docutils literal notranslate"><span class="pre">BaseModel</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#base_biblioteca.BaseModel.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">BaseModel.DoesNotExist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base_biblioteca.BaseModel.id"><code class="docutils literal notranslate"><span class="pre">BaseModel.id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#base_biblioteca.Biblioteca"><code class="docutils literal notranslate"><span class="pre">Biblioteca</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#base_biblioteca.Biblioteca.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Biblioteca.DoesNotExist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base_biblioteca.Biblioteca.anio"><code class="docutils literal notranslate"><span class="pre">Biblioteca.anio</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base_biblioteca.Biblioteca.autor"><code class="docutils literal notranslate"><span class="pre">Biblioteca.autor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base_biblioteca.Biblioteca.id"><code class="docutils literal notranslate"><span class="pre">Biblioteca.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base_biblioteca.Biblioteca.isbn"><code class="docutils literal notranslate"><span class="pre">Biblioteca.isbn</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base_biblioteca.Biblioteca.titulo"><code class="docutils literal notranslate"><span class="pre">Biblioteca.titulo</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="funciones.html">Modulo Funciones</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Biblioteca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Modulo Base Bibioleta</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/base_biblioteca.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modulo-base-bibioleta">
+<h1>Modulo Base Bibioleta<a class="headerlink" href="#modulo-base-bibioleta" title="Link to this heading"></a></h1>
+<p>Define la estructura de la base de datos utilizando el ORM Peewee, al cual se le indica que el motor de base de datos con el que se va a trabajar es SQLite.</p>
+<section id="base-biblioteca-py">
+<span id="module-base_biblioteca"></span><h2>base_biblioteca.py<a class="headerlink" href="#base-biblioteca-py" title="Link to this heading"></a></h2>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="base_biblioteca.BaseModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base_biblioteca.</span></span><span class="sig-name descname"><span class="pre">BaseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/base_biblioteca.html#BaseModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#base_biblioteca.BaseModel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Modelo base para definir la base de datos</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base_biblioteca.BaseModel.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#base_biblioteca.BaseModel.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModelDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base_biblioteca.BaseModel.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;AutoField:</span> <span class="pre">BaseModel.id&gt;</span></em><a class="headerlink" href="#base_biblioteca.BaseModel.id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="base_biblioteca.Biblioteca">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base_biblioteca.</span></span><span class="sig-name descname"><span class="pre">Biblioteca</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/base_biblioteca.html#Biblioteca"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#base_biblioteca.Biblioteca" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#base_biblioteca.BaseModel" title="base_biblioteca.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p>Clase que crea la tabla Biblioteca, la cual tendra como campos:</p>
+<ul class="simple">
+<li><p>titulo (CharField): Título del libro (único).</p></li>
+<li><p>autor (CharField): Autor del libro.</p></li>
+<li><p>isbn (IntegerField): ISBN del libro (único).</p></li>
+<li><p>anio (IntegerField): Año de publicación del libro.</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base_biblioteca.Biblioteca.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#base_biblioteca.Biblioteca.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">BibliotecaDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base_biblioteca.Biblioteca.anio">
+<span class="sig-name descname"><span class="pre">anio</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;IntegerField:</span> <span class="pre">Biblioteca.anio&gt;</span></em><a class="headerlink" href="#base_biblioteca.Biblioteca.anio" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base_biblioteca.Biblioteca.autor">
+<span class="sig-name descname"><span class="pre">autor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;CharField:</span> <span class="pre">Biblioteca.autor&gt;</span></em><a class="headerlink" href="#base_biblioteca.Biblioteca.autor" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base_biblioteca.Biblioteca.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;AutoField:</span> <span class="pre">Biblioteca.id&gt;</span></em><a class="headerlink" href="#base_biblioteca.Biblioteca.id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base_biblioteca.Biblioteca.isbn">
+<span class="sig-name descname"><span class="pre">isbn</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;IntegerField:</span> <span class="pre">Biblioteca.isbn&gt;</span></em><a class="headerlink" href="#base_biblioteca.Biblioteca.isbn" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base_biblioteca.Biblioteca.titulo">
+<span class="sig-name descname"><span class="pre">titulo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;CharField:</span> <span class="pre">Biblioteca.titulo&gt;</span></em><a class="headerlink" href="#base_biblioteca.Biblioteca.titulo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vista.html" class="btn btn-neutral float-left" title="Modulo Vista" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="funciones.html" class="btn btn-neutral float-right" title="Modulo Funciones" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Leandro.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
