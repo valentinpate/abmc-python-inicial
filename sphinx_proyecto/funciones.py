@@ -49,8 +49,9 @@ class Validacion():
         """
         Verifica las condiciones que debe cumplir el nombre de autor
         """
-        if re.match(r"^[A-ZÑÁÉÍÓÚ][a-zñáéíóúäëïöü]{2,16},? \
-                     [A-ZÑÁÉÍÓÚ][a-zñáéíóúäëïöü]{2,16}", self.autor):
+        regex = r"^[A-ZÑÁÉÍÓÚ][a-zñáéíóúäëïöü]{2,16},? [A-ZÑÁÉÍÓÚ][a-z\
+            ñáéíóúäëïöü]{2,16}"
+        if re.match(regex, self.autor):
             return True
         return False
 
